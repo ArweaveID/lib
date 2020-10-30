@@ -1,0 +1,60 @@
+{
+  "name": "arweaveid",
+  "version": "1.1.2",
+  "author": {
+    "name": "Cedrik Boudreau",
+    "email": "cedrik.git@tryninja.io",
+    "website": "https://arweave.id"
+  },
+  "description": "Javascript library for ArweaveID v3.",
+  "main": "lib/arweaveid.js",
+  "types": "lib/arweaveid.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArweaveID/lib.git"
+  },
+  "scripts": {
+    "build": "npm run buildnpm && node build.js",
+    "buildnpm": "tsc",
+    "watch": "node watch.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "docs": "rimraf ./docs && typedoc --plugin typedoc-plugin-markdown --disableSources --readme none --excludePrivate --out ./docs ./src",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "test": "jest src/__tests__/arweaveid.spec.ts"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testTimeout": 100000
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "esbuild": "^0.7.16",
+    "node-watch": "^0.7.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-markdown": "^3.0.10",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "arweave": "^1.9.1",
+    "jest": "^26.6.1",
+    "smartweave": "^0.3.x",
+    "tiny-worker": "^2.3.0",
+    "ts-jest": "^26.4.3",
+    "typescript.api": "^0.7.7"
+  }
+}
