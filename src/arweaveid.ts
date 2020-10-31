@@ -1,7 +1,9 @@
 import Arweave from 'arweave';
+import jdenticon from 'jdenticon';
 import { interactWrite, readContract, interactWriteDryRun, interactRead } from 'smartweave';
 import { JWKInterface } from 'arweave/node/lib/wallet';
 import { AccountInterface, InputInterface, ResultInterface, StateInterface } from './faces';
+import { createCanvas } from 'canvas';
 
 export class ArweaveID {
   private readonly contractSrc: string = 'Q5Nc1bxWKa09bRiPcxgCuUL9uZm0msAc9w-FKOCev78';
@@ -55,9 +57,11 @@ export class ArweaveID {
     return this.read(params);
   }
 
-  async getAccount(target: string = this.walletAddress) {
+  async getAccount(target: string = this.walletAddress, identiconSize: number = 120) {
     const res = await this.get({ function: 'get', request: 'account', target });
     res.extras = new Map(res.extras);
+    res.identicon = await this.getIdenticon(target, identiconSize);
+
     return res.account;
   }
 
@@ -69,6 +73,13 @@ export class ArweaveID {
   async getAvatar(target: string = this.walletAddress) {
     const res = await this.get({ function: 'get', request: 'avatar', target });
     return res.avatar;
+  }
+
+  async getIdenticon(target: string = this.walletAddress, size: number = 120) {
+    const canvas = createCanvas(size, size, 'svg');
+    jdenticon.drawIcon(canvas.getContext('2d'), target, size);
+
+    return canvas.toDataURL();
   }
 
   async getBio(target: string = this.walletAddress) {

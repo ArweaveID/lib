@@ -52,6 +52,8 @@
   },
   "dependencies": {
     "arweave": "^1.9.1",
+    "canvas": "^2.6.1",
+    "jdenticon": "^3.0.1",
     "jest": "^26.6.1",
     "smartweave": "^0.3.x",
     "tiny-worker": "^2.3.0",

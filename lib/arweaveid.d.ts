@@ -19,6 +19,7 @@ export declare class ArweaveID {
     getAccount(target?: string): Promise<AccountInterface>;
     getName(target?: string): Promise<string>;
     getAvatar(target?: string): Promise<string>;
+    getIdenticon(target?: string): Promise<void>;
     getBio(target?: string): Promise<string>;
     getUrl(target?: string): Promise<string>;
     getExtra(key: string, target?: string): Promise<string>;

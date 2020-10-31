@@ -6,6 +6,7 @@ export interface StateInterface {
 export interface AccountInterface {
   name?: string;
   avatar?: string;
+  identicon?: string;
   bio?: string;
   url?: string;
   extras?: Map<string, string>;

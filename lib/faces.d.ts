@@ -7,6 +7,10 @@ export interface StateInterface {
 export interface AccountInterface {
     name?: string;
     avatar?: string;
+    identicon?: {
+        size: number;
+        dataUrl: string;
+    };
     bio?: string;
     url?: string;
     extras?: Map<string, string>;
