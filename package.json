@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
-    "esbuild": "^0.7.16",
+    "esbuild": "^0.8.0",
     "node-watch": "^0.7.0",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
@@ -55,7 +55,7 @@
     "canvas": "^2.6.1",
     "jdenticon": "^3.0.1",
     "jest": "^26.6.1",
-    "smartweave": "^0.4.1",
+    "smartweave": "^0.4.6",
     "tiny-worker": "^2.3.0",
     "ts-jest": "^26.4.3",
     "typescript.api": "^0.7.7"

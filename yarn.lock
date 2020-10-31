@@ -775,9 +775,9 @@ aws-sign2@~0.7.0:
   integrity sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
 
 aws4@^1.8.0:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.1.tgz#e1e82e4f3e999e2cfd61b161280d16a111f86428"
-  integrity sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
+  integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
 axios@^0.19.2:
   version "0.19.2"
@@ -1374,10 +1374,10 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-esbuild@^0.7.16:
-  version "0.7.22"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
-  integrity sha512-B43SYg8LGWYTCv9Gs0RnuLNwjzpuWOoCaZHTWEDEf5AfrnuDMerPVMdCEu7xOdhFvQ+UqfP2MGU9lxEy0JzccA==
+esbuild@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.0.tgz#3173e851303dce0682ebbcbaf6072b991dd6f60e"
+  integrity sha512-xCHJpLRlU0NIANQHNsiMDNC/HlrKoye7iH5YOcoZNurauUZgMhjmm9PCal+Oo9ARYZrWxN15mykbfCX//UEvng==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -1806,9 +1806,9 @@ has@^1.0.3:
     function-bind "^1.1.1"
 
 highlight.js@^10.2.0:
-  version "10.3.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.3.1.tgz#3ca6bf007377faae347e8135ff25900aac734b9a"
-  integrity sha512-jeW8rdPdhshYKObedYg5XGbpVgb1/DT4AHvDFXhkU7UnGSIjy9kkJ7zHG7qplhFHMitTSzh5/iClKQk3Kb2RFQ==
+  version "10.3.2"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.3.2.tgz#135fd3619a00c3cbb8b4cd6dbc78d56bfcbc46f1"
+  integrity sha512-3jRT7OUYsVsKvukNKZCtnvRcFyCJqSEIuIMsEybAXRiFSwpt65qjPd/Pr+UOdYt7WJlt+lj3+ypUsHiySBp/Jw==
 
 hosted-git-info@^2.1.4:
   version "2.8.8"
@@ -2650,11 +2650,6 @@ lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-
-localporridge@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/localporridge/-/localporridge-1.0.0.tgz#718eb86547b075ec78b369a26b7d1b6fddd171d5"
-  integrity sha512-mCaTeK+CMBUElyxQiLOIB0GdEOTZwvYl/VyqynJ+ApQbelItugJnp4+45jBcFbSAvFV9lStnkCK1ZbCNL75iUg==
 
 locate-path@^5.0.0:
   version "5.0.0"
@@ -3579,15 +3574,14 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-smartweave@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.1.tgz#bd3f198b9c51901218bca74410a9bd7e873fbd2d"
-  integrity sha512-Tqb6j6Wm4Nbn5+8PvuOpyAuGRIz3p1lYrc3bZngD8Pvrwsnd7pGLHDC9/PcBzc0h3tZV7wF/vhQckrTNPWsFTA==
+smartweave@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.6.tgz#75682f858670e68e075a9ec0c11d8f9f90d32733"
+  integrity sha512-iTIXEpxqQ4+nuVHhcOCT/fo5PpioALksOYmuy3po2EDp78xK5WLYAyvr5Y7nlCGz7v3BQ18BmdwA2GSdtv9IwA==
   dependencies:
     "@weavery/clarity" "^0.1.5"
     arweave "^1.9.1"
     bignumber.js "^9.0.1"
-    localporridge "^1.0.0"
     loglevel "^1.7.0"
     yargs "^16.1.0"
 
