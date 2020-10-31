@@ -1,5 +1,5 @@
 import Arweave from 'arweave';
-import jdenticon from 'jdenticon';
+import * as jdenticon from 'jdenticon';
 import { interactWrite, readContract, interactWriteDryRun, interactRead } from 'smartweave';
 import { JWKInterface } from 'arweave/node/lib/wallet';
 import { AccountInterface, InputInterface, ResultInterface, StateInterface } from './faces';

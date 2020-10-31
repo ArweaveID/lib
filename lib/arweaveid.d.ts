@@ -16,10 +16,10 @@ export declare class ArweaveID {
     getState(cached?: boolean): Promise<StateInterface>;
     setWallet(wallet: JWKInterface): Promise<string>;
     get(params?: InputInterface): Promise<ResultInterface>;
-    getAccount(target?: string): Promise<AccountInterface>;
+    getAccount(target?: string, identiconSize?: number): Promise<AccountInterface>;
     getName(target?: string): Promise<string>;
     getAvatar(target?: string): Promise<string>;
-    getIdenticon(target?: string): Promise<void>;
+    getIdenticon(target?: string, size?: number): Promise<string>;
     getBio(target?: string): Promise<string>;
     getUrl(target?: string): Promise<string>;
     getExtra(key: string, target?: string): Promise<string>;
