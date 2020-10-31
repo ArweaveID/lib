@@ -22,23 +22,26 @@ export class ArweaveID {
   constructor(arweave: Arweave, wallet?: JWKInterface, cacheRefreshInterval = 1000 * 60 * 2) {
     this.arweave = arweave;
 
-    if(wallet) {
+    if (wallet) {
       this.wallet = wallet;
-      arweave.wallets.jwkToAddress(wallet).then(addy => this.walletAddress = addy).catch(console.log);
+      arweave.wallets
+        .jwkToAddress(wallet)
+        .then((addy) => (this.walletAddress = addy))
+        .catch(console.log);
     }
 
-    if(cacheRefreshInterval) {
+    if (cacheRefreshInterval) {
       this.cacheRefreshInterval = cacheRefreshInterval;
     }
   }
 
   async getState(cached = true): Promise<StateInterface> {
-    if(this.firstCall) {
+    if (this.firstCall) {
       this.firstCall = false;
       return this.update(true);
     }
 
-    if(!cached || !this.state) {
+    if (!cached || !this.state) {
       return this.update(false);
     }
 
@@ -103,23 +106,21 @@ export class ArweaveID {
 
     const input: InputInterface = {
       function: 'set',
-      request: 'account'
+      request: 'account',
     };
 
     const keys = Object.keys(acc);
-    if(!keys.length) {
+    if (!keys.length) {
       throw new Error('At least one account property is required.');
     }
 
-    for(const key of keys) {
-      if(key === 'name' || key === 'bio' || key === 'url') {
+    for (const key of keys) {
+      if (key === 'name' || key === 'bio' || key === 'url') {
         input[key] = this.clean(acc[key]);
-      } else if(key === 'avatar') {
+      } else if (key === 'avatar') {
         input[key] = this.validateTxId(this.clean(acc[key]));
-      } else if(key === 'extras') {
-        const kvs: {[key: string]: string} = Array.from(acc[key]).reduce((obj, [k, value]) => (
-          Object.assign(obj, { [k]: this.clean(value) })
-        ), {});
+      } else if (key === 'extras') {
+        const kvs: { [key: string]: string } = Array.from(acc[key]).reduce((obj, [k, value]) => Object.assign(obj, { [k]: this.clean(value) }), {});
         input[key] = kvs;
       }
     }
@@ -129,52 +130,52 @@ export class ArweaveID {
 
   async setName(name: string) {
     name = this.clean(name);
-    if(!name.length) {
+    if (!name.length) {
       throw new Error('Name is required.');
     }
 
-    return this.setAccount({name});
+    return this.setAccount({ name });
   }
 
   async setAvatar(avatar: string) {
     avatar = this.validateTxId(this.clean(name));
-    if(!avatar.length) {
+    if (!avatar.length) {
       throw new Error('Avatar is required.');
     }
 
-    return this.setAccount({avatar});
+    return this.setAccount({ avatar });
   }
 
   async setBio(bio: string) {
     bio = this.clean(bio);
-    if(!bio.length) {
+    if (!bio.length) {
       throw new Error('Bio is required.');
     }
 
-    return this.setAccount({bio});
+    return this.setAccount({ bio });
   }
 
   async setUrl(url: string) {
     url = this.clean(url);
-    if(!url.length) {
+    if (!url.length) {
       throw new Error('Url is required.');
     }
 
-    return this.setAccount({url});
+    return this.setAccount({ url });
   }
 
   async setExtra(key: string, value: string) {
     key = this.clean(key);
     value = this.clean(value);
 
-    if(!key.length || !value.length) {
+    if (!key.length || !value.length) {
       throw new Error('Key and value are required.');
     }
 
     const m: Map<string, string> = new Map();
     m.set(key, value);
 
-    return this.setAccount({extras: m});
+    return this.setAccount({ extras: m });
   }
 
   // Private methods
@@ -216,10 +217,10 @@ export class ArweaveID {
     }
 
     const res = await interactRead(this.arweave, this.wallet || this.dummyWallet, this.mainContract, input);
-    if(typeof res === 'string') {
+    if (typeof res === 'string') {
       throw new Error(res);
     }
- 
+
     return res;
   }
 
@@ -237,13 +238,16 @@ export class ArweaveID {
 
   // Utils
   private clean(str: string) {
-    return str.toString().replace(/(<([^>]+)>)/ig, '').trim();
+    return str
+      .toString()
+      .replace(/(<([^>]+)>)/gi, '')
+      .trim();
   }
 
   private validateTxId(str: string) {
-    if(!str.length) return str;
+    if (!str.length) return str;
 
-    if(!/[a-z0-9_-]{43}/i.test(str)) {
+    if (!/[a-z0-9_-]{43}/i.test(str)) {
       throw new Error(`${str} is not a transaction ID.`);
     }
     return str;

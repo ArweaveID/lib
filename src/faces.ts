@@ -32,7 +32,7 @@ export interface InputInterface {
   bio?: string;
   url?: string;
   key?: string;
-  extras?: {[key: string]: string};
+  extras?: { [key: string]: string };
 }
 
 export type RequestType = 'account' | 'name' | 'avatar' | 'bio' | 'url' | 'extra';

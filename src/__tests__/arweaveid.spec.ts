@@ -6,13 +6,13 @@ import { AccountInterface } from '../faces';
 const arweave = Arweave.init({
   host: 'arweave.net',
   protocol: 'https',
-  port: 443
+  port: 443,
 });
 const arweaveid = new ArweaveID(arweave);
 
 let wallet: JWKInterface;
 async function randomGenerate() {
-  if(wallet) return wallet;
+  if (wallet) return wallet;
 
   wallet = await arweave.wallets.generate();
   await arweaveid.setWallet(wallet);
@@ -36,7 +36,7 @@ it('should set a wallet', async () => {
 it('should not get dummy account', async () => {
   await randomGenerate();
 
-  let acc: AccountInterface; 
+  let acc: AccountInterface;
   try {
     acc = (await arweaveid.get()).account;
   } catch (err) {
@@ -54,7 +54,7 @@ it('should get avatar', async () => {
 it('should set account', async () => {
   await randomGenerate();
 
-  expect(await arweaveid.setAccount({name: 'asdrf'})).toBeDefined();
+  expect(await arweaveid.setAccount({ name: 'asdrf' })).toBeDefined();
 });
 
 it('should create an identicon', async () => {
