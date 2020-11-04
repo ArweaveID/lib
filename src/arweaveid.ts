@@ -62,8 +62,8 @@ export class ArweaveID {
 
   async getAccount(target: string = this.walletAddress, identiconSize: number = 120) {
     const res = await this.get({ function: 'get', request: 'account', target });
-    res.extras = new Map(res.extras);
-    res.identicon = await this.getIdenticon(target, identiconSize);
+    res.account.extras = new Map(res.account.extras);
+    res.account.identicon = await this.getIdenticon(target, identiconSize);
 
     return res.account;
   }
