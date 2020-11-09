@@ -3574,10 +3574,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-smartweave@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.7.tgz#b479b1cec226ce19682a2d1b6aaa120421b5cc2d"
-  integrity sha512-KbunXDE0nD8MebTqU0e4iD0DXqAOhNmntboTTS5gjKoIOqw/yA+laRCtxkJIKa0I4d2eq9nwBtoaC3HSsFvKhQ==
+smartweave@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.10.tgz#9f5c29e439226476599476beaedb60d71c6cb57f"
+  integrity sha512-6/F44M55OahP7vM1SIxYGBNuYJO+UUEuHgN/U1YGwib9WOKbBXmhJH5g5249d3CWbdtPd37qFrtzfkfXFAk6jw==
   dependencies:
     "@weavery/clarity" "^0.1.5"
     arweave "^1.9.1"
